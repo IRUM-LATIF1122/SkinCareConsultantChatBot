@@ -379,6 +379,12 @@ def chat():
     session.modified = True
     return jsonify({"response": bot_response})  # Single return at the end
 
+#
+# if __name__ == '__main__':
+#     app.run(debug=True)
+
+import os
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
